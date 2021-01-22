@@ -1,0 +1,18 @@
+syntax = "proto3";
+import "google/protobuf/wrappers.proto";
+
+service OrderMgt {
+	rpc createOrder(OrderDetails)
+			returns (google.protobuf.StringValue);
+    rpc getOrder(google.protobuf.Int32Value)
+			returns (OrderDetails);
+    rpc updateOrder(google.protobuf.Int32Value)
+			returns (google.protobuf.StringValue);
+    rpc deleteOrder(google.protobuf.Int32Value)
+			returns (google.protobuf.StringValue);
+}
+
+message OrderDetails {
+    int32 id = 1;
+    string name = 2;
+}

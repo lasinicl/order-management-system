@@ -1,0 +1,7 @@
+[package]
+org = "lasini"
+name = "order_client"
+version = "0.1.0"
+
+[build-options]
+observabilityIncluded = true
