@@ -15,4 +15,6 @@ service OrderMgt {
 message OrderDetails {
     int32 id = 1;
     string name = 2;
+    int32 noOfItems = 3;
+    float amount = 4;
 }

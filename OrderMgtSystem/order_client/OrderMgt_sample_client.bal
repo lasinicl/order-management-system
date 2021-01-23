@@ -2,7 +2,22 @@ import ballerina/io;
 
 public function main() {
     OrderMgtClient orderEp = checkpanic new ("http://localhost:9090");
-    OrderDetails[] orderList = [{id: 1, name: "Mike"}, {id: 2, name: "Bianca"}, {id: 3, name: "James"}];
+    OrderDetails[] orderList = [{
+        id: 1,
+        name: "Mike",
+        noOfItems: 10,
+        amount: 2500.00
+    }, {
+        id: 2,
+        name: "Bianca",
+        noOfItems: 23,
+        amount: 10000.00
+    }, {
+        id: 3,
+        name: "James",
+        noOfItems: 30,
+        amount: 5400.00
+    }];
     foreach OrderDetails od in orderList {
         string|error result = orderEp->createOrder(od);
         if (result is string) {
